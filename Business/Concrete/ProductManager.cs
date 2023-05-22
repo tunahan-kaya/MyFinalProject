@@ -36,9 +36,9 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour==22)//sistem akşam saat 10'da bakımda
+            if (DateTime.Now.Hour == 1)//sistem akşam saat 10'da bakımda
             {
-                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime); 
+                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
             return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductsListed);
         }
