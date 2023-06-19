@@ -12,37 +12,37 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            ProductTest();
+            //ProductTest();
             //CategoryTest();   
 
         }
 
-        private static void CategoryTest()
-        {
-            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var category in categoryManager.GetAll())
-            {
-                System.Console.WriteLine(category.CategoryName);
-            }
-        }
+        //private static void CategoryTest()
+        //{
+        //    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal(),new CategoryManager(new EfCategoryDal()));
+        //    foreach (var category in categoryManager.GetAll())
+        //    {
+        //        System.Console.WriteLine(category.CategoryName);
+        //    }
+        //}
 
-        private static void ProductTest()
-        {
-            ProductManager productManager = new ProductManager(new EfProductDal());
+        //private static void ProductTest()
+        //{
+        //    ProductManager productManager = new ProductManager(new EfProductDal());
 
-            var result= productManager.GetProductDetails();
-            if (result.Success==true)
-            {
-                foreach (var product in result.Data)
-                {
-                    System.Console.WriteLine(product.ProductName + " / " + product.CategoryName);
-                }
-            }
-            else
-            {
-                System.Console.WriteLine(result.Message);
-            }
+        //    var result= productManager.GetProductDetails();
+        //    if (result.Success==true)
+        //    {
+        //        foreach (var product in result.Data)
+        //        {
+        //            System.Console.WriteLine(product.ProductName + " / " + product.CategoryName);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        System.Console.WriteLine(result.Message);
+        //   }
             
-        }
+        //}
     }
 }
