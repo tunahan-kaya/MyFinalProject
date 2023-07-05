@@ -36,7 +36,6 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            //business codes
           IResult result =  BusinessRules.Run(
               CheckIfProductNameExists(product.ProductName),
               CheckIfProductCountofCategoryCorrect(product.CategoryId),
